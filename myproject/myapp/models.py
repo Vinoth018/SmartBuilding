@@ -11,3 +11,17 @@ class Building(models.Model):
 
     def __str__(self):
         return self.building_name
+
+
+class Customer(models.Model):
+    name = models.CharField(max_length=100)
+    created_date = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    zipcode = models.CharField(max_length=10)
+    status = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name
